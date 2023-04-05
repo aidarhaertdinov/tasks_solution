@@ -43,9 +43,12 @@
 # operations[i] will be either "++X", "X++", "--X", or "X--".
 
 from typing import List
+from decorator import function_execution_time
 
 
-class Solution:
+class SolutionOne:
+
+    @function_execution_time
     def finalValueAfterOperations(self, operations: List[str]) -> int:
         count = 0
         for operation in operations:
@@ -55,3 +58,20 @@ class Solution:
                 count += 1
         return count
 
+
+class SolutionTwo:
+
+    @function_execution_time
+    def finalValueAfterOperations(self, operations: List[str]) -> int:
+
+        return sum([-1 if '-' in operation else 1 for operation in operations])
+
+
+if __name__ == '__main__':
+
+    result = SolutionOne()
+    print(result.finalValueAfterOperations(["--X", "X++", "X++"] * 10000000))
+
+
+    result = SolutionTwo()
+    print(result.finalValueAfterOperations(["--X", "X++", "X++"] * 10000000))

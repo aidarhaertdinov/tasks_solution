@@ -14,9 +14,11 @@
 # Input: jewels = "z", stones = "ZZ"
 # Output: 0
 
+from decorator import function_execution_time
 
-class Solution:
 
+class SolutionOne:
+    @function_execution_time
     def numJewelsInStones(self, jewels: str, stones: str) -> int:
         counter = 0
         for jewel in jewels:
@@ -27,3 +29,20 @@ class Solution:
         return counter
 
 
+class SolutionTwo:
+    @function_execution_time
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+
+        return sum([stones.count(jewel) for jewel in jewels])
+
+
+
+
+if __name__ == '__main__':
+
+    result = SolutionOne()
+    print(result.numJewelsInStones("aA", "aAAbbbb" * 10000000))
+
+
+    result = SolutionTwo()
+    print(result.numJewelsInStones("aA", "aAAbbbb" * 10000000))

@@ -27,11 +27,13 @@
 # Input: accounts = [[2,8,7],[7,1,3],[1,9,5]]
 # Output: 17
 
+
+from decorator import function_execution_time
 from typing import List
 
 
-class Solution:
-
+class SolutionOne:
+    @function_execution_time
     def maximumWealth(self, accounts: List[List[int]]) -> int:
         max_richest = []
         for account in accounts:
@@ -41,3 +43,20 @@ class Solution:
                 max_richest.append(totals)
 
         return max(max_richest)
+
+
+class SolutionTwo:
+    @function_execution_time
+    def maximumWealth(self, accounts: List[List[int]]) -> int:
+
+        return max([sum(account) for account in accounts])
+
+
+if __name__ == '__main__':
+
+    result = SolutionOne()
+    print(result.maximumWealth([[1, 2, 3], [3, 2, 1]] * 1000000))
+
+
+    result = SolutionTwo()
+    print(result.maximumWealth([[1, 2, 3], [3, 2, 1]] * 1000000))

@@ -37,9 +37,12 @@
 # 1 <= extraCandies <= 50
 
 from typing import List
+from decorator import function_execution_time
 
 
-class Solution:
+class SolutionOne:
+
+    @function_execution_time
     def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
         result = []
         max_candy = max(candies)
@@ -50,3 +53,21 @@ class Solution:
                 result.append(False)
 
         return result
+
+
+class SolutionTwo:
+
+    @function_execution_time
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+
+        return [True if candy + extraCandies >= max(candies) else False for candy in candies]
+
+
+if __name__ == '__main__':
+
+    result = SolutionOne()
+    print(result.kidsWithCandies([2, 3, 5, 1, 3] * 1000,  3))
+
+
+    result = SolutionTwo()
+    print(result.kidsWithCandies([2, 3, 5, 1, 3] * 1000,  3))
