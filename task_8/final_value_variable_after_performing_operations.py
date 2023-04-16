@@ -41,7 +41,7 @@
 #
 # 1 <= operations.length <= 100
 # operations[i] will be either "++X", "X++", "--X", or "X--".
-
+from functools import reduce
 from typing import List
 from decorator import function_execution_time
 
@@ -61,10 +61,12 @@ class SolutionOne:
 
 class SolutionTwo:
 
+    element = '-'
     @function_execution_time
     def finalValueAfterOperations(self, operations: List[str]) -> int:
 
-        return sum([-1 if '-' in operation else 1 for operation in operations])
+        return sum([-1 if SolutionTwo.element in operation else 1 for operation in operations])
+
 
 
 if __name__ == '__main__':

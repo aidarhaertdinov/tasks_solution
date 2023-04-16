@@ -32,6 +32,5 @@ from typing import List
 
 class Solution:
     def buildArray(self, nums: List[int]) -> List[int]:
-        new_list = [nums[num] for num in nums]
 
-        return new_list
+        return [nums[num] for num in nums]

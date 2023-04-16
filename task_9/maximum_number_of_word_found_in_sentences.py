@@ -29,8 +29,11 @@
 
 from typing import List
 
+from decorator import function_execution_time
 
-class Solution:
+
+class SolutionOne:
+    @function_execution_time
     def mostWordsFound(self, sentences: List[str]) -> int:
         total_count = 0
         for words in range(len(sentences)):
@@ -41,3 +44,22 @@ class Solution:
                 total_count = count
 
         return total_count
+
+
+class SolutionTwo:
+    @function_execution_time
+    def mostWordsFound(self, sentences: List[str]) -> int:
+        return max([sentence.strip().count(' ') for sentence in sentences]) + 1
+
+
+
+if __name__ == '__main__':
+
+    result = SolutionOne()
+    print(result.mostWordsFound(["alice and bob love leetcode", "i think so too",
+                                 "this is great thanks very much"] * 1000000))
+
+
+    result = SolutionTwo()
+    print(result.mostWordsFound(["alice and bob love leetcode", "i think so too",
+                                 "this is great thanks very much"] * 1000000))
