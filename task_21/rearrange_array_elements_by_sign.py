@@ -51,3 +51,4 @@ class Solution:
         new_list = [element for elements in zip_list for element in elements]
 
         return new_list
+

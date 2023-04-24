@@ -31,21 +31,19 @@
 # The beginning and end of the linked list have Node.val == 0.
 
 from typing import Optional
-
+# Input: head = [0,1,0,3,0,2,2,0]
+# Output: [1,3,4]
 
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
-
-
 class Solution:
     def mergeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
         new_list = []
         temporary = 0
-
         for element in head:
             if element == 0:
                 if temporary == 0:
@@ -53,7 +51,6 @@ class Solution:
                 else:
                     new_list.append(temporary)
                     temporary = 0
-
             else:
                 temporary += element
 
