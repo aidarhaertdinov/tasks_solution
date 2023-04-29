@@ -1,5 +1,5 @@
 from unittest import TestCase, main
-from task_19_ListNode.maximum_twin_sum_of_a_linked_list import Solution
+from task_19.maximum_twin_sum_of_a_linked_list import Solution
 
 
 class CountDigitsTest(TestCase):

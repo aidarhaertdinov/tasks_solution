@@ -30,9 +30,18 @@
 # 1 <= part.length <= 1000
 # s and part consists of lowercase English letters.
 
+# class Solution:
+#     def removeOccurrences(self, s: str, part: str) -> str:
+#         while part in s:
+#             s = s.replace(part, '', 1)
+#
+#         return s
+
 class Solution:
     def removeOccurrences(self, s: str, part: str) -> str:
-        while part in s:
+        if part in s:
             s = s.replace(part, '', 1)
+            return self.removeOccurrences(s, part)
 
         return s
+

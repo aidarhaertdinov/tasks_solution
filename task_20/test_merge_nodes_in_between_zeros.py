@@ -1,5 +1,5 @@
 from unittest import TestCase, main
-from task_20_ListNode.merge_nodes_in_between_zeros import Solution
+from task_20.merge_nodes_in_between_zeros import Solution
 
 
 class CountDigitsTest(TestCase):
