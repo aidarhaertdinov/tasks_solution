@@ -20,20 +20,19 @@
 # Input: grid = [[1,2,3],[4,5,6],[7,8,9]]
 # Output: 35
 # Explanation: There is only one hourglass in the matrix, with the sum: 1 + 2 + 3 + 5 + 7 + 8 + 9 = 35.
-#
 # Constraints:
 # m == grid.length
 # n == grid[i].length
 # 3 <= m, n <= 150
 # 0 <= grid[i][j] <= 106
-
 from typing import List
-
 
 class Solution:
     def maxSum(self, grid: List[List[int]]) -> int:
 
-        hourglass = [["A", "B", "C"], ["", "D", ""], ["E", "F", "G"]]
+        hourglass = [["A", "B", "C"],
+                     ["", "D", ""],
+                     ["E", "F", "G"]]
 
         return sum([grid[hourglass.index(elements)][element] for elements in hourglass
                     for element in range(len(elements)) if elements[element]])

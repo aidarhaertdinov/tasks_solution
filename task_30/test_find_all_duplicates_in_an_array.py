@@ -2,7 +2,7 @@ from unittest import TestCase, main
 from task_30.find_all_duplicates_in_an_array import Solution
 
 
-class FindDuplicates(TestCase):
+class FindDuplicatesTest(TestCase):
     solution = Solution()
 
     def test_one_positive(self):
