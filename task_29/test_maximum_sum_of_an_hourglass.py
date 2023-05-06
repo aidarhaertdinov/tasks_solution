@@ -1,9 +1,9 @@
 from unittest import TestCase, main
-from task_29.maximum_sum_of_an_hourglass import Solution
+from task_29.maximum_sum_of_an_hourglass import SolutionOne
 
 
 class MaxSum(TestCase):
-    solution = Solution()
+    solution = SolutionOne()
 
     def test_one_positive(self):
         self.assertEqual(self.solution.maxSum(grid=[[6, 2, 1, 3], [4, 2, 1, 5], [9, 2, 8, 7], [4, 1, 2, 9]]),

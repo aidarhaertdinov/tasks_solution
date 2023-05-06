@@ -65,35 +65,6 @@ class SolutionTwo:
         return ''.join(_list)
 
 
-class SolutionThree:
-
-    def searchIndexByStartPosition(self, _list: list, start_index: int, el: str):
-        for index, element in enumerate(_list[start_index:]):
-            if el is element:
-                return index
-
-    def delStar(self, _list: list, start_index: int) -> list:
-        start_index = self.searchIndexByStartPosition(_list, start_index, '*')
-
-        if start_index is None:
-            return _list
-
-        del _list[start_index - 1:start_index + 1]
-
-        start_index -= 5
-
-        self.delStar(_list, start_index)
-
-        return _list
-
-    @function_execution_time
-    def removeStars(self, s: str) -> str:
-        _list = list(s)
-
-        self.delStar(_list, 0)
-
-        return ''.join(_list)
-
 
 if __name__ == '__main__':
 
@@ -103,6 +74,3 @@ if __name__ == '__main__':
 
     result = SolutionTwo()
     print(result.removeStars(s="leet**cod*e"*100))
-
-    result = SolutionThree()
-    print(result.removeStars(s="leet**cod*e" * 100))

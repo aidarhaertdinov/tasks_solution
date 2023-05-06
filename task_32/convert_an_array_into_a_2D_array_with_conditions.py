@@ -26,16 +26,21 @@
 # 1 <= nums[i] <= nums.length
 from typing import List
 
+
 class Solution:
     def findMatrix(self, nums: List[int]) -> List[List[int]]:
-
-        new_list = []
-        lst = []
+        new_list = [[]]
 
         for num in nums:
-            if num not in lst:
-                lst.append(num)
+            flag = False
+            for lst in new_list:
+                if num not in lst:
+                    lst.append(num)
+                    flag = True
+                    break
 
-            new_list.append(lst)
+            if flag == False:
+                new_list.append([num])
 
         return new_list
+

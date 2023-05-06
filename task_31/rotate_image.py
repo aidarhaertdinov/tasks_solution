@@ -21,5 +21,8 @@ from typing import List
 class Solution:
     def rotate(self, matrix: List[List[int]]) -> None:
 
+        new_list = [list(element) for element in list(zip(*matrix[::-1]))]
+        matrix.clear()
+        matrix.extend(new_list)
+        return matrix
 
-        return [list(element) for element in zip(*matrix[::-1])]

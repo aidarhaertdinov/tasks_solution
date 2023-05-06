@@ -27,7 +27,9 @@
 # 0 <= grid[i][j] <= 106
 from typing import List
 
-class Solution:
+
+class SolutionOne:
+
     def maxSum(self, grid: List[List[int]]) -> int:
 
         hourglass = [["A", "B", "C"],
@@ -36,3 +38,22 @@ class Solution:
 
         return sum([grid[hourglass.index(elements)][element] for elements in hourglass
                     for element in range(len(elements)) if elements[element]])
+
+
+class SolutionTwo:
+
+    def maxSum(self, grid: List[List[int]]) -> int:
+
+        hourglass = [["A", "B", "C"],
+                     ["", "D", ""],
+                     ["E", "F", "G"]]
+
+        counter = 0
+
+        for elements in hourglass:
+            for element in range(len(elements)):
+                if elements[element]:
+                    counter += grid[hourglass.index(elements)][element]
+
+        return counter
+

@@ -29,15 +29,10 @@
 class Solution:
     def minSteps(self, s: str, t: str) -> int:
 
-        counter = 0
-        list_t = sorted(list(t))
-        list_s = sorted(list(s))
+        t = list(t)
 
-        for i in range(len(list_t)):
-            if list_t[i] not in list_s:
-                counter += 1
-            else:
-                list_s.remove(list_t[i])
+        for element in s:
+            if element in t:
+                t.remove(element)
 
-        return counter
-
+        return len(t)
