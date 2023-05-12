@@ -27,8 +27,9 @@
 # 1 <= nums.length <= 1000
 # 0 <= nums[i] <= 9
 
+# Input: nums = [1,2,3,4,5]
+# Output: 8
 from typing import List
-
 
 class Solution:
     def triangularSum(self, nums: List[int]) -> int:
@@ -50,7 +51,3 @@ class Solution:
                 flag = False
 
         return new_list[0]
-
-solution = Solution()
-res = solution.triangularSum(nums=[1, 2, 3, 4, 5, 6, 7, 8])
-print(res)

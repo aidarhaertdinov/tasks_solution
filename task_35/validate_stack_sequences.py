@@ -24,8 +24,7 @@
 # popped is a permutation of pushed.
 
 from typing import List
-
-
+# Input: pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
 class Solution:
     def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
         new_list = []

@@ -51,7 +51,6 @@ class Solution:
                     counter += 1
             new_list.append(counter)
             counter = 0
-
         lst = [x for x in range(lo, hi + 1)]
 
         zip_list = sorted(list(zip(new_list, lst)))[k - 1][1]
