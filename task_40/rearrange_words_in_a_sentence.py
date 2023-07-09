@@ -27,7 +27,8 @@
 # Input: text = "To be or not to be"
 # Output: "To be or to be not"
 
-
+ # Input: text = "Leetcode is cool"
+# Output: "Is cool leetcode"
 class Solution:
     def arrangeWords(self, text: str) -> str:
 

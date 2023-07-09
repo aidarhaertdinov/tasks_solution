@@ -42,6 +42,7 @@ class Solution:
         temporary = []
 
         for index in range(len(colors) - 1):
+            #если два цвета равны находим наименьшее время, удаляем элемент и добавляем по наименьшему
             if colors[index] == colors[index + 1]:
                 temporary.append(neededTime[index])
             else:
@@ -53,3 +54,5 @@ class Solution:
             counter += sum(sorted(temporary)[:-1])
 
         return counter
+
+
